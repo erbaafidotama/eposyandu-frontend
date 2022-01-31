@@ -1,9 +1,13 @@
 import create from "zustand";
+import axios from "axios";
 
-const UseStore = create((set) => ({
-  bears: 0,
-  increasePopulation: () => set((state) => ({ bears: state.bears + 1 })),
-  removeAllBears: () => set({ bears: 0 }),
+const useStore = create((set) => ({
+  users: [],
+  fetchUser: async (payload) => {
+    const url = "https://jsonplaceholder.typicode.com/users";
+    const response = await axios.get(url);
+    set({ users: await response.data });
+  },
 }));
 
-export default UseStore;
+export default useStore;

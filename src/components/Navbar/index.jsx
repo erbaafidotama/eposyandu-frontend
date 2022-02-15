@@ -21,10 +21,9 @@ function Index(props) {
     props.router.navigate("/about");
   };
 
-  const gotoMasterWarga = () => {
-    // props.history.push("/about");
-    props.router.navigate("/warga");
-  };
+  // const gotoMasterWarga = () => {
+  //   props.router.navigate("/warga");
+  // };
   return (
     <div>
       <nav class="bg-white border-b border-gray-200 fixed z-30 w-full">

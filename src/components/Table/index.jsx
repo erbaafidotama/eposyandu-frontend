@@ -1,5 +1,4 @@
 import { Grid, _ } from "gridjs-react";
-import Button from "@mui/material/Button";
 import "gridjs/dist/theme/mermaid.css";
 
 import React from "react";
@@ -8,8 +7,18 @@ const Index = (props) => {
   console.log(props.column);
   const buttons = (
     <>
-      <Button variant="contained">Edit</Button>{" "}
-      <Button variant="contained" color="error">Delete</Button>
+      <button
+        type="button"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Edit
+      </button>
+      <button
+        type="button"
+        class="text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+      >
+        Delete
+      </button>
     </>
   );
   const columns = props.column;
@@ -19,7 +28,7 @@ const Index = (props) => {
   });
   return (
     <div>
-        <Button variant="contained">New</Button>
+      {/* <Button variant="contained">New</Button> */}
       <Grid
         data={props.data}
         columns={columnsButtons}

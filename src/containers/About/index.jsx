@@ -5,7 +5,7 @@ export default function index() {
   return (
     <div>
       Ini About Index
-      <Table />
+      {/* <Table /> */}
     </div>
   );
 }

@@ -1,37 +1,26 @@
-import React, { useEffect } from "react";
-
-import Table from "../../components/Table/index";
-
-import useStore from "../../store/Home";
+import React from "react";
 
 const Index = () => {
-  const fetchUser = useStore((state) => state.fetchUser);
-  const dataUsers = useStore((state) => state.users);
-
-  useEffect(() => {
-    fetchUser();
-  }, []);
-
-  const columns = [
-    // { id: "lookup_code", label: "Lookup Code" },
-    // { id: "description", label: "Description" },
-    { id: "name", name: "Name" },
-    { id: "username", name: "Username" },
-    { id: "website", name: "Website" },
-    { id: "email", name: "Email" },
-  ];
-
-  console.log(dataUsers);
   return (
     <div>
-      <p>Ini Home Index</p>
-      {dataUsers ? (
-        <>
-          <Table data={dataUsers} column={columns} />
-        </>
-      ) : (
-        <h4>LOADING</h4>
-      )}
+      <div className="grid gap-6 lg:grid-cols-2 justify-items-center">
+        <div class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md ">
+          <h2 class="text-7xl font-bold tracking-tight text-blue-700 dark:text-white text-center">
+            15
+          </h2>
+          <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+            RT
+          </h5>
+        </div>
+        <div class="block p-6 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md ">
+          <h2 class="mb-2 text-7xl font-bold tracking-tight text-blue-700 dark:text-white text-center">
+            15
+          </h2>
+          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white text-center">
+            RT
+          </h5>
+        </div>
+      </div>
     </div>
   );
 };
